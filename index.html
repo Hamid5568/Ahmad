@@ -1,70 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zakat Calculator</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        h1 {
-            text-align: center;
-        }
-        .container {
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        input {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .result {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #f2f2f2;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Management System</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Zakat Calculator</h1>
-        <label for="amount">Enter your money (in USD):</label>
-        <input type="number" id="amount" min="0" placeholder="Enter amount">
-        <button onclick="calculateZakat()">Calculate Zakat</button>
-        <div class="result" id="result"></div>
-    </div>
+  <header>
+    <h1>School Management System</h1>
+  </header>
 
-    <script>
-        function calculateZakat() {
-            const amount = document.getElementById('amount').value;
-            if (isNaN(amount) || amount <= 0) {
-                alert('Please enter a valid amount greater than zero.');
-                return;
-            }
+  <main>
+    <h2>Add Student</h2>
+    <form action="/add-student" method="POST">
+      <input type="text" name="name" placeholder="Enter student name">
+      <input type="number" name="roll_number" placeholder="Enter student roll number">
+      <input type="text" name="class" placeholder="Enter student class">
+      <input type="number" name="obtained_marks" placeholder="Enter student obtained marks">
+      <input type="number" name="phone_number" placeholder="Enter student phone number">
+      <button type="submit">Add Student</button>
+    </form>
 
-            // Zakat calculation (Example: 2.5%)
-            const zakatAmount = amount * 0.025;
-            document.getElementById('result').innerText = `Zakat amount: $${zakatAmount.toFixed(2)}`;
-        }
-    </script>
+    <h2>Search Student</h2>
+    <input type="text" id="search-bar" placeholder="Search student by name or roll number">
+
+    <h2>Student List</h2>
+    <table id="student-list">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Roll Number</th>
+          <th>Class</th>
+          <th>Obtained Marks</th>
+          <th>Phone Number</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
