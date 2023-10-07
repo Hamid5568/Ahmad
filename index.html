@@ -13,13 +13,30 @@
 
   <main>
     <h2>Add Student</h2>
-    <form action="/add-student" method="POST">
+    <form id="add-student-form">
       <input type="text" name="name" placeholder="Enter student name">
       <input type="number" name="roll_number" placeholder="Enter student roll number">
       <input type="text" name="class" placeholder="Enter student class">
       <input type="number" name="obtained_marks" placeholder="Enter student obtained marks">
       <input type="number" name="phone_number" placeholder="Enter student phone number">
       <button type="submit">Add Student</button>
+    </form>
+
+    <h2>Update Student</h2>
+    <form id="update-student-form">
+      <input type="number" name="id" placeholder="Enter student ID">
+      <input type="text" name="name" placeholder="Enter student name">
+      <input type="number" name="roll_number" placeholder="Enter student roll number">
+      <input type="text" name="class" placeholder="Enter student class">
+      <input type="number" name="obtained_marks" placeholder="Enter student obtained marks">
+      <input type="number" name="phone_number" placeholder="Enter student phone number">
+      <button type="submit">Update Student</button>
+    </form>
+
+    <h2>Delete Student</h2>
+    <form id="delete-student-form">
+      <input type="number" name="id" placeholder="Enter student ID">
+      <button type="submit">Delete Student</button>
     </form>
 
     <h2>Search Student</h2>
@@ -29,6 +46,7 @@
     <table id="student-list">
       <thead>
         <tr>
+          <th>ID</th>
           <th>Name</th>
           <th>Roll Number</th>
           <th>Class</th>
